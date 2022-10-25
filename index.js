@@ -8,7 +8,7 @@ const courses = require("./data/courses.json");
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Welcome to DEV LEARN server!");
 });
 
 app.get("/categories", (req, res) => {
