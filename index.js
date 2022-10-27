@@ -4,6 +4,7 @@ const port = process.env.port || 5000;
 const cors = require("cors");
 const courseCategory = require("./data/courseCategory.json");
 const courses = require("./data/courses.json");
+const blogs = require('./data/blogs.json');
 
 app.use(cors());
 
@@ -29,6 +30,10 @@ app.get("/courses/:courseId", (req, res) => {
   const id = parseInt(req.params.courseId);
   const singleCourse = courses.find((course) => course.id === id);
   res.send(singleCourse);
+});
+
+app.get("/blogs", (req, res) => {
+  res.send(blogs);
 });
 
 app.listen(port, () => {
